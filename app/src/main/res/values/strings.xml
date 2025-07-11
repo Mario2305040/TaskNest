@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">TaskNest</string>
+    <string name="modo_oscuro">Modo Oscuro</string>
+    <string-array name="diasSemana">
+        <item>Lunes</item>
+        <item>Martes</item>
+        <item>Miércoles</item>
+        <item>Jueves</item>
+        <item>Viernes</item>
+        <item>Sábado</item>
+    </string-array>
+</resources>

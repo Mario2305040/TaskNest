@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <!-- Layout superior con botón de cambio de tema y texto "Inicio" -->
+    <LinearLayout
+        android:id="@+id/linearTop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/switch1"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:minWidth="48dp"
+            android:text="@string/modo_oscuro"
+            android:padding="8dp" />
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/txt_fecha"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="16dp"
+        android:textColor="?attr/colorOnPrimary"
+        android:textSize="18sp"
+        app:layout_constraintTop_toBottomOf="@id/linearTop" />
+
+    <!-- Resumen del día actual -->
+    <LinearLayout
+        android:id="@+id/layoutResumenDia"
+        android:layout_width="0dp"
+        android:layout_height="252dp"
+        android:orientation="vertical"
+        android:padding="16dp"
+        app:layout_constraintTop_toBottomOf="@id/txt_fecha"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" >
+
+        <!-- Título del resumen del día -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="8dp"
+            android:text="Resumen del Día"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <!-- Scroll para la lista de tareas del día -->
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:fillViewport="true">
+
+            <ListView
+                android:id="@+id/listTareasDia"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:divider="@android:color/darker_gray"
+                android:dividerHeight="1dp" />
+        </ScrollView>
+    </LinearLayout>
+
+    <GridLayout
+        android:id="@+id/gridMenu"
+        android:layout_width="387dp"
+        android:layout_height="224dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="32dp"
+        android:columnCount="3"
+        android:rowCount="2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.478"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.714">
+
+        <!-- Botón para Asignaturas -->
+        <LinearLayout
+            android:layout_width="131dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <ImageButton
+                android:id="@+id/btn_asignaturas"
+                android:layout_width="60dp"
+                android:layout_height="52dp"
+                android:background="?attr/selectableItemBackground"
+                android:contentDescription="asignaturas"
+                android:src="@drawable/ic_asignaturas" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:text="asignaturas"
+                android:textColor="@android:color/black"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <!-- Botón para Ausencias -->
+        <LinearLayout
+            android:layout_width="133dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <ImageButton
+                android:id="@+id/btn_ausencias"
+                android:layout_width="60dp"
+                android:layout_height="52dp"
+                android:background="?attr/selectableItemBackground"
+                android:contentDescription="ausencias"
+                android:src="@drawable/ic_ausencias" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:text="ausencias"
+                android:textColor="@android:color/black"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <!-- Botón para Cálculo rápido -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <ImageButton
+                android:id="@+id/btn_calculo_rapido"
+                android:layout_width="60dp"
+                android:layout_height="52dp"
+                android:background="?attr/selectableItemBackground"
+                android:contentDescription="calculo_rapido"
+                android:src="@drawable/ic_calculo_rapido" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:text="calculo_rapido"
+                android:textColor="@android:color/black"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <!-- Botón para Horario -->
+        <LinearLayout
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <ImageButton
+                android:id="@+id/btn_horario"
+                android:layout_width="60dp"
+                android:layout_height="52dp"
+                android:background="?attr/selectableItemBackground"
+                android:contentDescription="horario"
+                android:src="@drawable/ic_horario" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:text="horario"
+                android:textColor="@android:color/black"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <!-- Botón para Agenda -->
+        <LinearLayout
+            android:layout_width="133dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <ImageButton
+                android:id="@+id/btn_agenda"
+                android:layout_width="60dp"
+                android:layout_height="52dp"
+                android:background="?attr/selectableItemBackground"
+                android:contentDescription="agenda"
+                android:src="@drawable/ic_agenda" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:text="agenda"
+                android:textColor="@android:color/black"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <!-- Botón para Agenda -->
+        <LinearLayout
+            android:layout_width="133dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <ImageButton
+                android:id="@+id/btn_profesores"
+                android:layout_width="60dp"
+                android:layout_height="52dp"
+                android:background="?attr/selectableItemBackground"
+                android:contentDescription="profesores"
+                android:src="@drawable/ic_profesores" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:text="profesores"
+                android:textColor="@android:color/black"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+    </GridLayout>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

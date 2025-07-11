@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Agenda">
+
+
+    <!-- Título de la sección -->
+    <TextView
+        android:id="@+id/Agenda"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Agenda de Tareas"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="16dp"/>
+
+    <!-- Input para ingresar el nombre de la tarea -->
+    <EditText
+        android:id="@+id/Tarea"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Ingresa la tarea pendiente"
+        android:padding="16dp"
+        android:inputType="text"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintTop_toBottomOf="@id/Agenda"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- Selector de fecha para la fecha límite -->
+    <Button
+        android:id="@+id/SeleccionarFecha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Seleccionar Fecha Límite"
+        app:layout_constraintTop_toBottomOf="@id/Tarea"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="16dp"/>
+
+    <!-- TextView para mostrar la fecha seleccionada -->
+    <TextView
+        android:id="@+id/FechaSeleccionada"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Fecha límite: No seleccionada"
+        app:layout_constraintTop_toBottomOf="@id/SeleccionarFecha"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="16dp"/>
+
+    <!-- Botón para agregar tarea -->
+    <Button
+        android:id="@+id/AgregarTarea"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Agregar Tarea"
+        app:layout_constraintTop_toBottomOf="@id/FechaSeleccionada"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="16dp"/>
+
+    <!-- Lista de tareas pendientes -->
+    <ListView
+        android:id="@+id/ListaTareas"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:divider="@android:color/darker_gray"
+        android:dividerHeight="1dp"
+        app:layout_constraintTop_toBottomOf="@id/AgregarTarea"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

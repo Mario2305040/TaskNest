@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Ausencias">
+
+    <!-- Spinner para seleccionar la materia -->
+    <Spinner
+        android:id="@+id/spinnerMateria"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:minHeight="48dp"
+        android:padding="16dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Campo de texto para ingresar el número de ausencias -->
+    <EditText
+        android:id="@+id/editTextAusencias"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Ingresa el número de ausencias"
+        android:inputType="number"
+        android:padding="16dp"
+        app:layout_constraintTop_toBottomOf="@id/spinnerMateria"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp" />
+
+    <!-- Botón para añadir ausencias -->
+    <Button
+        android:id="@+id/btn_add_ausencia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Añadir Ausencia"
+        app:layout_constraintTop_toBottomOf="@id/editTextAusencias"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp" />
+
+    <!-- ListView para mostrar ausencias añadidas -->
+    <ListView
+        android:id="@+id/listViewAusencias"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/btn_add_ausencia"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="16dp"
+        android:padding="16dp"/>
+
+    <!-- TextView para mostrar el total de ausencias -->
+    <TextView
+        android:id="@+id/txtTotalAusencias"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="216dp"
+        android:padding="16dp"
+        android:text="Total de Ausencias: 0"
+        android:textColor="?attr/colorOnPrimary"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/listViewAusencias" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
